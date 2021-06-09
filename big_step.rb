@@ -21,5 +21,3 @@ class Add
     Number.new(left.evaluate(environment).value + right.evaluate(environment).value)
   end
 end
-
-class
