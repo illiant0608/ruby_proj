@@ -240,6 +240,9 @@ class Machine < Struct.new(:statement, :environment)
   end
 end
 
+require './big_step.rb'
+require './denotational_semantic.rb'
+
 # Machine.new(
 #   Sequence.new(
 #     Assign.new(:x, Add.new(Number.new(1), Number.new(1))),
@@ -248,10 +251,3 @@ end
 #   {}
 # ).run
 
-Machine.new(
-  While.new(
-    LessThan.new(Variable.new(:x), Number.new(5)),
-    Assign.new(:x, Multiply.new(Variable.new(:x), Number.new(3)))
-  ),
-  { x: Number.new(1) }
-).run
